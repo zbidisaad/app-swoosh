@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="-26.399999999999999" y="70.614692653673174"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="OEE-nT-Wdm">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="CjX-Y1-sim" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="CjX-Y1-sim" customClass="LeagueVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rxm-Tq-sL1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,6 +120,7 @@
                                         <state key="normal" title="Mens"/>
                                         <connections>
                                             <action selector="getgoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lBV-A2-fvK"/>
+                                            <action selector="onMensTapped:" destination="CjX-Y1-sim" eventType="touchUpInside" id="yG3-9r-W8e"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4T-eN-SaD" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
@@ -132,6 +133,7 @@
                                         <state key="normal" title="Womens"/>
                                         <connections>
                                             <action selector="getgoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ChS-N2-1L9"/>
+                                            <action selector="onWomensTapped:" destination="CjX-Y1-sim" eventType="touchUpInside" id="amh-8z-jHR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHE-xp-HaF" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
@@ -144,11 +146,12 @@
                                         <state key="normal" title="Co-ed"/>
                                         <connections>
                                             <action selector="getgoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xfA-S6-mWX"/>
+                                            <action selector="onCoedTapped:" destination="CjX-Y1-sim" eventType="touchUpInside" id="50U-l7-77a"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyx-P8-MIa" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyx-P8-MIa" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                 <rect key="frame" x="16" y="597" width="343" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.4703843513" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -158,6 +161,7 @@
                                 <state key="normal" title="NEXT"/>
                                 <connections>
                                     <action selector="getgoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Znd-ZN-37F"/>
+                                    <action selector="onNextTapped:" destination="CjX-Y1-sim" eventType="touchUpInside" id="lOR-cP-ySV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apl-7o-b1x">
@@ -192,16 +196,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="J09-cF-cx5"/>
+                    <connections>
+                        <outlet property="nextBtn" destination="Vyx-P8-MIa" id="ayO-Ek-ajh"/>
+                        <segue destination="RGf-6m-q7S" kind="show" identifier="skillVCSegue" id="ZUu-Oz-30L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o2q-tu-fRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="2Ej-jh-Bhu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="816.79999999999995" y="70.614692653673174"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="Z8a-Ua-yJn">
             <objects>
-                <viewController id="RGf-6m-q7S" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="RGf-6m-q7S" customClass="SkillVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DR6-L2-9bU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,6 +288,7 @@
                             <constraint firstItem="T61-tr-U4e" firstAttribute="bottom" secondItem="2eQ-9Z-wEU" secondAttribute="bottom" constant="20" id="uKn-Wp-gZH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nTg-Q5-FJB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0o0-Xw-WUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
